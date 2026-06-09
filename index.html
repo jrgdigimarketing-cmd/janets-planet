@@ -1,173 +1,884 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Janet's Planet | Elevate</title>
-<meta name="description" content="Yoga, sound healing, retreats and wellness experiences for women seeking balance and renewal.">
-<meta property="og:title" content="Janet's Planet">
-<meta property="og:description" content="Reconnect through yoga, sound healing and retreats.">
+
+<title>Janet's Planet | Yoga, Retreats & Wellness Experiences</title>
+
+<meta name="description" content="Reconnect with yourself through yoga, sound healing, retreats, meditation and restorative wellness experiences. Janet's Planet helps women create balance, wellbeing and meaningful transformation.">
+
+<meta name="keywords" content="yoga, wellness retreats, sound healing, meditation, mindfulness, women's wellness, Cape Town wellness, healing retreats">
+
+<meta name="author" content="Janet's Planet">
+
+<meta property="og:title" content="Janet's Planet | Yoga, Retreats & Wellness Experiences">
+<meta property="og:description" content="Helping women reconnect with themselves through yoga, sound healing, mindfulness and transformational retreats.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:,">
+<meta property="og:image" content="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80">
+<meta property="og:url" content="https://janetsplanet.co.za">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌿%3C/text%3E%3C/svg%3E">
+
 <style>
+/* ==========================================
+   ROOT VARIABLES
+========================================== */
+
 :root{
---sage:#7b8f7a;--beige:#f4efe7;--white:#fffdf9;--gold:#c6a86b;--text:#2f3430;
+    --sage:#7b9278;
+    --sage-light:#dfe8dc;
+    --beige:#f4efe7;
+    --white:#fffdf9;
+    --gold:#b89b5e;
+    --charcoal:#2f3432;
+    --gray:#5e6562;
+
+    --shadow:0 15px 40px rgba(0,0,0,.08);
+    --radius:18px;
+    --transition:.35s ease;
+    --max-width:1200px;
 }
-*{box-sizing:border-box} html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,sans-serif;color:var(--text);background:var(--white);line-height:1.6}
-header{position:sticky;top:0;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);z-index:1000}
-nav{max-width:1200px;margin:auto;padding:1rem;display:flex;justify-content:space-between;align-items:center}
-.logo{font-weight:700;font-size:1.3rem}
-.nav-links{display:flex;gap:1rem}
-.nav-links a{text-decoration:none;color:var(--text)}
-.hero{min-height:100vh;background:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1600&q=80') center/cover;display:flex;align-items:center}
-.hero .content{max-width:700px;margin:0 auto;padding:2rem;color:white;text-shadow:0 2px 8px rgba(0,0,0,.5)}
-.btn{display:inline-block;padding:.9rem 1.4rem;border-radius:30px;text-decoration:none;margin:.25rem}
-.btn-primary{background:var(--gold);color:white}
-.btn-secondary{border:1px solid white;color:white}
-section{padding:5rem 1rem}
-.container{max-width:1200px;margin:auto}
-h2{text-align:center;margin-bottom:2rem}
-.grid{display:grid;gap:2rem}
-.cards{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-.card{background:white;padding:1.5rem;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,.08)}
-.about{grid-template-columns:1fr 1fr}
-.about img{width:100%;border-radius:12px}
-.gallery{columns:3 250px;column-gap:1rem}
-.gallery img{width:100%;margin-bottom:1rem;border-radius:12px}
-.contact form{display:grid;gap:1rem}
-input,textarea{padding:.9rem;border:1px solid #ccc;border-radius:8px}
-footer{background:var(--sage);color:white;padding:2rem;text-align:center}
-.whatsapp,.top-btn{position:fixed;right:20px;border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;text-decoration:none;color:white}
-.whatsapp{bottom:20px;background:#25D366}
-.top-btn{bottom:90px;background:var(--sage);display:none}
-.reveal{opacity:0;transform:translateY(25px);transition:.6s}
-.reveal.show{opacity:1;transform:none}
-.menu-toggle{display:none}
+
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    line-height:1.7;
+    color:var(--charcoal);
+    background:var(--white);
+    overflow-x:hidden;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+.container{
+    width:min(90%, var(--max-width));
+    margin:auto;
+}
+
+section{
+    padding:6rem 0;
+}
+
+h1,h2,h3{
+    line-height:1.2;
+    font-weight:700;
+}
+
+h1{
+    font-size:clamp(2.8rem,5vw,5rem);
+}
+
+h2{
+    font-size:clamp(2rem,4vw,3rem);
+    margin-bottom:1rem;
+}
+
+p{
+    color:var(--gray);
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 28px;
+    border-radius:999px;
+    transition:var(--transition);
+    cursor:pointer;
+    font-weight:600;
+}
+
+.btn-primary{
+    background:var(--sage);
+    color:white;
+}
+
+.btn-primary:hover{
+    background:#6c8369;
+    transform:translateY(-2px);
+}
+
+.btn-secondary{
+    border:2px solid white;
+    color:white;
+}
+
+.btn-secondary:hover{
+    background:white;
+    color:var(--charcoal);
+}
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:999;
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(10px);
+    box-shadow:0 1px 15px rgba(0,0,0,.05);
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:1rem 0;
+}
+
+.logo{
+    font-size:1.5rem;
+    font-weight:700;
+    color:var(--sage);
+}
+
+.nav-links{
+    display:flex;
+    gap:2rem;
+}
+
+.nav-links a{
+    position:relative;
+    font-weight:500;
+}
+
+.nav-links a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-4px;
+    width:0;
+    height:2px;
+    background:var(--gold);
+    transition:var(--transition);
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.hamburger{
+    display:none;
+    flex-direction:column;
+    cursor:pointer;
+    gap:5px;
+}
+
+.hamburger span{
+    width:26px;
+    height:3px;
+    background:var(--charcoal);
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    position:relative;
+    color:white;
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=80')
+    center/cover no-repeat;
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.hero p{
+    color:rgba(255,255,255,.9);
+    font-size:1.15rem;
+    margin:1.5rem 0 2rem;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:1rem;
+    flex-wrap:wrap;
+}
+
+/* ==========================================
+   ABOUT
+========================================== */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:4rem;
+    align-items:center;
+}
+
+.about-image img{
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+}
+
+.section-tag{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:.8rem;
+    font-weight:700;
+    margin-bottom:1rem;
+}
+
+/* ==========================================
+   SERVICES
+========================================== */
+
+.services{
+    background:var(--beige);
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:2rem;
+    margin-top:3rem;
+}
+
+.card{
+    background:white;
+    padding:2rem;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    transition:var(--transition);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    margin-bottom:1rem;
+}
+
+/* ==========================================
+   RETREAT SECTION
+========================================== */
+
+.retreat{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:4rem;
+    align-items:center;
+}
+
+.retreat img{
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+}
+
+/* ==========================================
+   TESTIMONIAL
+========================================== */
+
+.testimonial{
+    background:var(--sage);
+    color:white;
+    text-align:center;
+}
+
+.testimonial blockquote{
+    max-width:900px;
+    margin:auto;
+    font-size:1.4rem;
+    font-style:italic;
+}
+
+.testimonial cite{
+    display:block;
+    margin-top:1.5rem;
+    opacity:.8;
+}
+
+/* ==========================================
+   CONTACT
+========================================== */
+
+.contact{
+    background:var(--beige);
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:3rem;
+}
+
+.contact-form{
+    background:white;
+    padding:2rem;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+}
+
+.form-group{
+    margin-bottom:1rem;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:14px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font:inherit;
+}
+
+textarea{
+    min-height:140px;
+    resize:vertical;
+}
+
+.error{
+    color:#d00000;
+    font-size:.9rem;
+    margin-top:.3rem;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+    background:var(--charcoal);
+    color:white;
+    padding:3rem 0;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:2rem;
+}
+
+footer a:hover{
+    color:var(--gold);
+}
+
+.copyright{
+    border-top:1px solid rgba(255,255,255,.15);
+    margin-top:2rem;
+    padding-top:2rem;
+    text-align:center;
+}
+
+/* ==========================================
+   FLOATING BUTTONS
+========================================== */
+
+.whatsapp-btn,
+.back-top{
+    position:fixed;
+    right:20px;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:999;
+    box-shadow:var(--shadow);
+    transition:var(--transition);
+}
+
+.whatsapp-btn{
+    bottom:20px;
+    background:#25D366;
+    color:white;
+    font-size:1.5rem;
+}
+
+.back-top{
+    bottom:90px;
+    background:var(--sage);
+    color:white;
+    opacity:0;
+    visibility:hidden;
+}
+
+.back-top.show{
+    opacity:1;
+    visibility:visible;
+}
+
+/* ==========================================
+   SCROLL ANIMATIONS
+========================================== */
+
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all .8s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .about-grid,
+    .retreat,
+    .contact-grid,
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+}
+
 @media(max-width:768px){
-.about{grid-template-columns:1fr}
-.nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:white;flex-direction:column;padding:1rem}
-.nav-links.open{display:flex}
-.menu-toggle{display:block;background:none;border:none;font-size:1.5rem}
+
+    .hamburger{
+        display:flex;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        background:white;
+        flex-direction:column;
+        text-align:center;
+        padding:2rem;
+        display:none;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    section{
+        padding:4rem 0;
+    }
+
+    .hero{
+        text-align:center;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
 }
 </style>
 </head>
+
 <body>
+
 <header>
-<nav>
-<div class="logo">Janet's Planet</div>
-<button class="menu-toggle">☰</button>
-<div class="nav-links">
-<a href="#about">About</a><a href="#yoga">Yoga</a><a href="#sound">Sound Healing</a><a href="#retreats">Retreats</a><a href="#contact">Contact</a>
-</div>
-</nav>
+    <div class="container navbar">
+        <a href="#" class="logo">Janet's Planet</a>
+
+        <nav>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#yoga">Yoga</a></li>
+                <li><a href="#retreats">Retreats</a></li>
+                <li><a href="#sound">Sound Healing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="hamburger" id="hamburger" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
 </header>
 
-<section class="hero">
-<div class="content">
-<h1>Elevate Your Wellbeing</h1>
-<p>A nurturing space for women seeking balance, healing, connection and personal growth through yoga, sound healing and restorative retreats.</p>
-<a href="#contact" class="btn btn-primary">Book a Discovery Call</a>
-<a href="#retreats" class="btn btn-secondary">Explore Retreats</a>
-</div>
+<main>
+
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content reveal">
+            <h1>Reconnect With Yourself Through Rest, Presence & Healing</h1>
+
+            <p>
+                Janet's Planet offers nurturing wellness experiences designed
+                to help women slow down, restore balance, deepen self-awareness
+                and create meaningful transformation through yoga, meditation,
+                sound healing and immersive retreats.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Book a Discovery Call</a>
+                <a href="#retreats" class="btn btn-secondary">Explore Retreats</a>
+            </div>
+        </div>
+    </div>
 </section>
 
-<section id="about" class="reveal">
-<div class="container grid about">
-<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80" alt="Janet">
-<div>
-<h2>About Janet</h2>
-<p>Janet's Planet was created to support women navigating change, stress and the search for deeper meaning. Through mindful movement, breathwork and immersive wellness experiences, Janet helps clients reconnect with themselves and create sustainable wellbeing.</p>
-<p>With years of experience in yoga, meditation and holistic wellness practices, Janet offers a welcoming environment for beginners and experienced practitioners alike.</p>
-</div>
-</div>
+<section id="about">
+    <div class="container about-grid reveal">
+
+        <div class="about-image">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80" alt="Woman practicing yoga outdoors">
+        </div>
+
+        <div>
+            <div class="section-tag">About Janet's Planet</div>
+            <h2>A Space to Pause, Reflect and Flourish</h2>
+
+            <p>
+                Life's demands can leave many women feeling disconnected from
+                themselves. Janet's Planet creates welcoming spaces where women
+                can slow down, breathe deeply and reconnect with what matters
+                most.
+            </p>
+
+            <br>
+
+            <p>
+                Through yoga, mindfulness practices, sound healing and carefully
+                curated retreats, our experiences support greater wellbeing,
+                clarity, resilience and personal growth.
+            </p>
+        </div>
+
+    </div>
 </section>
 
-<section id="yoga" class="reveal">
-<div class="container">
-<h2>Yoga</h2>
-<div class="grid cards">
-<div class="card"><h3>Group Classes</h3><p>Supportive classes focused on mobility, strength and calm.</p></div>
-<div class="card"><h3>Private Sessions</h3><p>Personalised guidance tailored to your goals and abilities.</p></div>
-<div class="card"><h3>Mindful Movement</h3><p>Build resilience while reducing stress and tension.</p></div>
-</div>
-</div>
+<section class="services" id="yoga">
+    <div class="container">
+
+        <div class="reveal" style="text-align:center;">
+            <div class="section-tag">Wellness Experiences</div>
+            <h2>Support for Every Stage of Your Journey</h2>
+        </div>
+
+        <div class="cards">
+
+            <article class="card reveal">
+                <h3>Yoga Classes</h3>
+                <p>
+                    Gentle and accessible yoga practices that help improve
+                    flexibility, strength, mindfulness and overall wellbeing.
+                </p>
+            </article>
+
+            <article class="card reveal" id="sound">
+                <h3>Sound Healing</h3>
+                <p>
+                    Immersive sound journeys using restorative frequencies and
+                    vibration to encourage relaxation and inner balance.
+                </p>
+            </article>
+
+            <article class="card reveal">
+                <h3>Meditation & Mindfulness</h3>
+                <p>
+                    Practical techniques that help calm the nervous system,
+                    improve focus and cultivate lasting peace.
+                </p>
+            </article>
+
+        </div>
+
+    </div>
 </section>
 
-<section id="sound" class="reveal" style="background:var(--beige)">
-<div class="container">
-<h2>Sound Healing</h2>
-<div class="grid cards">
-<div class="card"><h3>Sound Journeys</h3><p>Immersive sessions using therapeutic sound frequencies.</p></div>
-<div class="card"><h3>Singing Bowls</h3><p>Gentle vibrations encourage relaxation and clarity.</p></div>
-<div class="card"><h3>Meditation</h3><p>Create space for stillness, reflection and restoration.</p></div>
-</div>
-</div>
+<section id="retreats">
+    <div class="container retreat reveal">
+
+        <div>
+            <div class="section-tag">Retreats</div>
+            <h2>Transformative Retreat Experiences</h2>
+
+            <p>
+                Escape daily pressures and immerse yourself in restorative
+                wellness experiences surrounded by nature.
+            </p>
+
+            <br>
+
+            <p>
+                Our retreats blend yoga, reflection, mindfulness, nourishing
+                connection and self-care to create lasting positive change.
+            </p>
+
+            <br>
+
+            <a href="#contact" class="btn btn-primary">
+                Enquire About Retreats
+            </a>
+        </div>
+
+        <div>
+            <img loading="lazy" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80" alt="Wellness retreat in nature">
+        </div>
+
+    </div>
 </section>
 
-<section id="retreats" class="reveal">
-<div class="container">
-<h2>Retreats</h2>
-<div class="grid cards">
-<div class="card"><img style="width:100%;border-radius:8px" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80"><h3>Women's Retreats</h3></div>
-<div class="card"><img style="width:100%;border-radius:8px" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"><h3>Nature Escapes</h3></div>
-<div class="card"><img style="width:100%;border-radius:8px" src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=800&q=80"><h3>Silent Retreats</h3></div>
-</div>
-</div>
+<section class="testimonial">
+    <div class="container">
+        <blockquote>
+            “The retreat gave me space to reconnect with myself in a way I
+            hadn't experienced in years. I returned feeling grounded, inspired
+            and deeply renewed.”
+        </blockquote>
+
+        <cite>— Retreat Participant</cite>
+    </div>
 </section>
 
-<section class="reveal">
-<div class="container">
-<h2>Testimonials</h2>
-<div class="grid cards">
-<div class="card">"I feel calmer and more grounded than I have in years." – Sarah</div>
-<div class="card">"Janet creates a safe and welcoming space." – Michelle</div>
-<div class="card">"The retreat was transformative and deeply restorative." – Karen</div>
-</div>
-</div>
+<section class="contact" id="contact">
+    <div class="container contact-grid reveal">
+
+        <div>
+            <div class="section-tag">Get In Touch</div>
+            <h2>Start Your Wellness Journey</h2>
+
+            <p>
+                Whether you're interested in yoga classes, sound healing,
+                retreats or private wellness experiences, we'd love to hear
+                from you.
+            </p>
+
+            <br>
+
+            <p><strong>Email:</strong> hello@janetsplanet.co.za</p>
+            <p><strong>Phone:</strong> +27 XX XXX XXXX</p>
+            <p><strong>Location:</strong> South Africa</p>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+
+            <div class="form-group">
+                <input type="text" id="name" placeholder="Your Name">
+                <div class="error" id="nameError"></div>
+            </div>
+
+            <div class="form-group">
+                <input type="email" id="email" placeholder="Your Email">
+                <div class="error" id="emailError"></div>
+            </div>
+
+            <div class="form-group">
+                <textarea id="message" placeholder="Tell us how we can help"></textarea>
+                <div class="error" id="messageError"></div>
+            </div>
+
+            <button class="btn btn-primary" type="submit">
+                Send Enquiry
+            </button>
+
+        </form>
+
+    </div>
 </section>
 
-<section class="reveal">
-<div class="container">
-<h2>Gallery</h2>
-<div class="gallery">
-<img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=800&q=80">
-<img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80">
-<img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80">
-</div>
-</div>
-</section>
-
-<section id="contact" class="contact reveal">
-<div class="container">
-<h2>Contact Janet</h2>
-<form id="contactForm">
-<input required placeholder="Name">
-<input required type="email" placeholder="Email">
-<textarea required rows="5" placeholder="Message"></textarea>
-<button class="btn btn-primary" type="submit">Send Enquiry</button>
-</form>
-<p>Email: hello@janetsplanet.co.za | Phone: +27 XX XXX XXXX</p>
-</div>
-</section>
+</main>
 
 <footer>
-<p>© 2026 Janet's Planet. All rights reserved.</p>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+                <h3>Janet's Planet</h3>
+                <p style="color:#d7d7d7;">
+                    Wellness experiences that help women reconnect,
+                    restore and thrive.
+                </p>
+            </div>
+
+            <div>
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#yoga">Yoga</a></li>
+                    <li><a href="#retreats">Retreats</a></li>
+                    <li><a href="#sound">Sound Healing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Contact</h3>
+                <p style="color:#d7d7d7;">hello@janetsplanet.co.za</p>
+                <p style="color:#d7d7d7;">South Africa</p>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 Janet's Planet. All rights reserved.
+        </div>
+
+    </div>
+
 </footer>
 
-<a href="#" class="top-btn" id="topBtn">↑</a>
-<a href="https://wa.me/27000000000" class="whatsapp">✆</a>
+<a href="https://wa.me/27000000000" class="whatsapp-btn" aria-label="WhatsApp">
+    ✆
+</a>
+
+<button class="back-top" id="backTop" aria-label="Back to top">
+    ↑
+</button>
 
 <script>
-document.querySelector('.menu-toggle').onclick=()=>document.querySelector('.nav-links').classList.toggle('open');
-const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}));
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-window.addEventListener('scroll',()=>{
-document.getElementById('topBtn').style.display=window.scrollY>400?'flex':'none';
+
+/* MOBILE MENU */
+
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
 });
-document.getElementById('contactForm').addEventListener('submit',e=>{
-e.preventDefault(); alert('Thank you. Your enquiry has been submitted.');
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
 });
+
+/* SCROLL REVEAL */
+
+const reveals = document.querySelectorAll('.reveal');
+
+function revealElements(){
+    reveals.forEach(el=>{
+        const windowHeight = window.innerHeight;
+        const revealTop = el.getBoundingClientRect().top;
+
+        if(revealTop < windowHeight - 100){
+            el.classList.add('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', revealElements);
+revealElements();
+
+/* BACK TO TOP */
+
+const backTop = document.getElementById('backTop');
+
+window.addEventListener('scroll', () => {
+
+    if(window.scrollY > 500){
+        backTop.classList.add('show');
+    } else {
+        backTop.classList.remove('show');
+    }
+
+});
+
+backTop.addEventListener('click', () => {
+    window.scrollTo({
+        top:0,
+        behavior:'smooth'
+    });
+});
+
+/* FORM VALIDATION */
+
+const form = document.getElementById('contactForm');
+
+form.addEventListener('submit', function(e){
+
+    e.preventDefault();
+
+    let valid = true;
+
+    const name = document.getElementById('name');
+    const email = document.getElementById('email');
+    const message = document.getElementById('message');
+
+    document.getElementById('nameError').textContent = '';
+    document.getElementById('emailError').textContent = '';
+    document.getElementById('messageError').textContent = '';
+
+    if(name.value.trim() === ''){
+        document.getElementById('nameError').textContent =
+        'Please enter your name.';
+        valid = false;
+    }
+
+    const emailPattern =
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(!emailPattern.test(email.value)){
+        document.getElementById('emailError').textContent =
+        'Please enter a valid email.';
+        valid = false;
+    }
+
+    if(message.value.trim().length < 10){
+        document.getElementById('messageError').textContent =
+        'Please enter at least 10 characters.';
+        valid = false;
+    }
+
+    if(valid){
+        alert(
+            'Thank you for your enquiry. We will be in touch shortly.'
+        );
+        form.reset();
+    }
+
+});
+
 </script>
+
 </body>
 </html>
+```
