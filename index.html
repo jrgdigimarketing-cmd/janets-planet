@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Janet's Planet | Elevate</title>
+<meta name="description" content="Yoga, sound healing, retreats and wellness experiences for women seeking balance and renewal.">
+<meta property="og:title" content="Janet's Planet">
+<meta property="og:description" content="Reconnect through yoga, sound healing and retreats.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:,">
+<style>
+:root{
+--sage:#7b8f7a;--beige:#f4efe7;--white:#fffdf9;--gold:#c6a86b;--text:#2f3430;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;color:var(--text);background:var(--white);line-height:1.6}
+header{position:sticky;top:0;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);z-index:1000}
+nav{max-width:1200px;margin:auto;padding:1rem;display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:700;font-size:1.3rem}
+.nav-links{display:flex;gap:1rem}
+.nav-links a{text-decoration:none;color:var(--text)}
+.hero{min-height:100vh;background:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1600&q=80') center/cover;display:flex;align-items:center}
+.hero .content{max-width:700px;margin:0 auto;padding:2rem;color:white;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.btn{display:inline-block;padding:.9rem 1.4rem;border-radius:30px;text-decoration:none;margin:.25rem}
+.btn-primary{background:var(--gold);color:white}
+.btn-secondary{border:1px solid white;color:white}
+section{padding:5rem 1rem}
+.container{max-width:1200px;margin:auto}
+h2{text-align:center;margin-bottom:2rem}
+.grid{display:grid;gap:2rem}
+.cards{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:white;padding:1.5rem;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,.08)}
+.about{grid-template-columns:1fr 1fr}
+.about img{width:100%;border-radius:12px}
+.gallery{columns:3 250px;column-gap:1rem}
+.gallery img{width:100%;margin-bottom:1rem;border-radius:12px}
+.contact form{display:grid;gap:1rem}
+input,textarea{padding:.9rem;border:1px solid #ccc;border-radius:8px}
+footer{background:var(--sage);color:white;padding:2rem;text-align:center}
+.whatsapp,.top-btn{position:fixed;right:20px;border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;text-decoration:none;color:white}
+.whatsapp{bottom:20px;background:#25D366}
+.top-btn{bottom:90px;background:var(--sage);display:none}
+.reveal{opacity:0;transform:translateY(25px);transition:.6s}
+.reveal.show{opacity:1;transform:none}
+.menu-toggle{display:none}
+@media(max-width:768px){
+.about{grid-template-columns:1fr}
+.nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:white;flex-direction:column;padding:1rem}
+.nav-links.open{display:flex}
+.menu-toggle{display:block;background:none;border:none;font-size:1.5rem}
+}
+</style>
+</head>
+<body>
+<header>
+<nav>
+<div class="logo">Janet's Planet</div>
+<button class="menu-toggle">☰</button>
+<div class="nav-links">
+<a href="#about">About</a><a href="#yoga">Yoga</a><a href="#sound">Sound Healing</a><a href="#retreats">Retreats</a><a href="#contact">Contact</a>
+</div>
+</nav>
+</header>
+
+<section class="hero">
+<div class="content">
+<h1>Elevate Your Wellbeing</h1>
+<p>A nurturing space for women seeking balance, healing, connection and personal growth through yoga, sound healing and restorative retreats.</p>
+<a href="#contact" class="btn btn-primary">Book a Discovery Call</a>
+<a href="#retreats" class="btn btn-secondary">Explore Retreats</a>
+</div>
+</section>
+
+<section id="about" class="reveal">
+<div class="container grid about">
+<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80" alt="Janet">
+<div>
+<h2>About Janet</h2>
+<p>Janet's Planet was created to support women navigating change, stress and the search for deeper meaning. Through mindful movement, breathwork and immersive wellness experiences, Janet helps clients reconnect with themselves and create sustainable wellbeing.</p>
+<p>With years of experience in yoga, meditation and holistic wellness practices, Janet offers a welcoming environment for beginners and experienced practitioners alike.</p>
+</div>
+</div>
+</section>
+
+<section id="yoga" class="reveal">
+<div class="container">
+<h2>Yoga</h2>
+<div class="grid cards">
+<div class="card"><h3>Group Classes</h3><p>Supportive classes focused on mobility, strength and calm.</p></div>
+<div class="card"><h3>Private Sessions</h3><p>Personalised guidance tailored to your goals and abilities.</p></div>
+<div class="card"><h3>Mindful Movement</h3><p>Build resilience while reducing stress and tension.</p></div>
+</div>
+</div>
+</section>
+
+<section id="sound" class="reveal" style="background:var(--beige)">
+<div class="container">
+<h2>Sound Healing</h2>
+<div class="grid cards">
+<div class="card"><h3>Sound Journeys</h3><p>Immersive sessions using therapeutic sound frequencies.</p></div>
+<div class="card"><h3>Singing Bowls</h3><p>Gentle vibrations encourage relaxation and clarity.</p></div>
+<div class="card"><h3>Meditation</h3><p>Create space for stillness, reflection and restoration.</p></div>
+</div>
+</div>
+</section>
+
+<section id="retreats" class="reveal">
+<div class="container">
+<h2>Retreats</h2>
+<div class="grid cards">
+<div class="card"><img style="width:100%;border-radius:8px" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80"><h3>Women's Retreats</h3></div>
+<div class="card"><img style="width:100%;border-radius:8px" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"><h3>Nature Escapes</h3></div>
+<div class="card"><img style="width:100%;border-radius:8px" src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=800&q=80"><h3>Silent Retreats</h3></div>
+</div>
+</div>
+</section>
+
+<section class="reveal">
+<div class="container">
+<h2>Testimonials</h2>
+<div class="grid cards">
+<div class="card">"I feel calmer and more grounded than I have in years." – Sarah</div>
+<div class="card">"Janet creates a safe and welcoming space." – Michelle</div>
+<div class="card">"The retreat was transformative and deeply restorative." – Karen</div>
+</div>
+</div>
+</section>
+
+<section class="reveal">
+<div class="container">
+<h2>Gallery</h2>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80">
+</div>
+</div>
+</section>
+
+<section id="contact" class="contact reveal">
+<div class="container">
+<h2>Contact Janet</h2>
+<form id="contactForm">
+<input required placeholder="Name">
+<input required type="email" placeholder="Email">
+<textarea required rows="5" placeholder="Message"></textarea>
+<button class="btn btn-primary" type="submit">Send Enquiry</button>
+</form>
+<p>Email: hello@janetsplanet.co.za | Phone: +27 XX XXX XXXX</p>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Janet's Planet. All rights reserved.</p>
+</footer>
+
+<a href="#" class="top-btn" id="topBtn">↑</a>
+<a href="https://wa.me/27000000000" class="whatsapp">✆</a>
+
+<script>
+document.querySelector('.menu-toggle').onclick=()=>document.querySelector('.nav-links').classList.toggle('open');
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}));
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+window.addEventListener('scroll',()=>{
+document.getElementById('topBtn').style.display=window.scrollY>400?'flex':'none';
+});
+document.getElementById('contactForm').addEventListener('submit',e=>{
+e.preventDefault(); alert('Thank you. Your enquiry has been submitted.');
+});
+</script>
+</body>
+</html>
